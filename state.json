@@ -33,5 +33,12 @@
     "last_high_ts": 0,
     "last_low_ts": 0,
     "last_move_candle": 0
+  },
+  "ZEC": {
+    "above_hit": false,
+    "below_hit": false,
+    "last_high_ts": 0,
+    "last_low_ts": 0,
+    "last_move_candle": 0
   }
 }
