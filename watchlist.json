@@ -1,5 +1,14 @@
 {
-  "currency": "usd",
-  "alert_1h_pct": 3.0,
-  "coins": ["bitcoin", "ethereum", "solana", "derive"]
+  "exchange": "bybit",
+  "move_pct": 2.0,
+  "min_volume_x": 0,
+  "btc_filter_pct": 2.0,
+  "alert_24h_extremes": true,
+  "cooldown_minutes": 60,
+  "max_coins": 40,
+  "post_summary": false,
+  "levels": {
+    "BTC": { "above": 120000, "below": 90000 },
+    "SOL": { "below": 150 }
+  }
 }
