@@ -1,0 +1,5 @@
+{
+  "currency": "usd",
+  "alert_1h_pct": 3.0,
+  "coins": ["bitcoin", "ethereum", "solana", "derive"]
+}
