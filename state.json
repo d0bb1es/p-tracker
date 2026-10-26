@@ -6,6 +6,13 @@
     "last_low_ts": 0,
     "last_move_candle": 0
   },
+  "DOGE": {
+    "above_hit": false,
+    "below_hit": false,
+    "last_high_ts": 0,
+    "last_low_ts": 0,
+    "last_move_candle": 0
+  },
   "ETH": {
     "above_hit": false,
     "below_hit": false,
