@@ -1,0 +1,23 @@
+{
+  "BTC": {
+    "above_hit": false,
+    "below_hit": true,
+    "last_high_ts": 0,
+    "last_low_ts": 0,
+    "last_move_candle": 0
+  },
+  "ETH": {
+    "above_hit": false,
+    "below_hit": false,
+    "last_high_ts": 0,
+    "last_low_ts": 0,
+    "last_move_candle": 0
+  },
+  "SOL": {
+    "above_hit": false,
+    "below_hit": true,
+    "last_high_ts": 0,
+    "last_low_ts": 0,
+    "last_move_candle": 0
+  }
+}
