@@ -6,16 +6,16 @@ on:
   workflow_dispatch:         # manual "Run workflow" button
 
 permissions:
-  contents: read
+  contents: write            # lets the job save coins.json / state.json back to the repo
 
 concurrency:
   group: price-tracker
-  cancel-in-progress: true
+  cancel-in-progress: false
 
 jobs:
   post:
     runs-on: ubuntu-latest
-    timeout-minutes: 5
+    timeout-minutes: 10
     steps:
       - uses: actions/checkout@v4
       - uses: dtolnay/rust-toolchain@stable
@@ -23,4 +23,12 @@ jobs:
       - run: cargo run --release
         env:
           DISCORD_WEBHOOK: ${{ secrets.DISCORD_WEBHOOK }}
-          COINGECKO_API_KEY: ${{ secrets.COINGECKO_API_KEY }}
+          DISCORD_BOT_TOKEN: ${{ secrets.DISCORD_BOT_TOKEN }}
+          DISCORD_COMMANDS_CHANNEL_ID: ${{ secrets.DISCORD_COMMANDS_CHANNEL_ID }}
+      - name: Save state
+        if: always()
+        run: |
+          git config user.name "price-tracker-bot"
+          git config user.email "price-tracker-bot@users.noreply.github.com"
+          git add state.json coins.json
+          git diff --cached --quiet || (git commit -m "update state" && git pull --rebase && git push)
